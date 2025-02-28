@@ -1,0 +1,49 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.home__background {
+    background-image: url("./../../assets/home/background-home-desktop.jpg");
+
+    @include m.responsive("tablet") {
+        background-image: url("./../../assets/home/background-home-tablet.jpg");
+    }
+
+    @include m.responsive("mobile") {
+        background-image: url("./../../assets/home/background-home-mobile.jpg");
+    }
+}
+
+.home__l1 {
+    @include m.text-preset-5;
+}
+
+.home__heading {
+    @include m.text-preset-1;
+    color: v.$color-white;
+}
+
+.home__btn {
+    @include m.text-preset-4;
+    display: block;
+    width: v.$spacing-1600;
+    height: v.$spacing-1600;
+    color: v.$color-blue-900;
+    background-color: v.$color-white;
+    padding: v.$spacing-600;
+    border-radius: 50%;
+    -moz-box-shadow: 0 0 0 0 v.$color-white;
+    box-shadow: 0 0 0 0 v.$color-white;
+    transition: all 0.3s ease;
+
+    &:hover {
+        -moz-box-shadow: 0 0 0 v.$spacing-500 v.$color-white-shadow;
+        box-shadow: 0 0 0 v.$spacing-500 v.$color-white-shadow;
+        color: v.$color-white-btn-hover;
+    }
+
+    @include m.responsive("mobile") {
+        width: v.$spacing-1000;
+        height: v.$spacing-1000;
+        padding: v.$spacing-300;
+    }
+}

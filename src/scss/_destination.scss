@@ -1,0 +1,66 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.destination__background {
+    background-image: url("./../../assets/destination/background-destination-desktop.jpg");
+
+    @include m.responsive("tablet") {
+        background-image: url("./../../assets/destination/background-destination-tablet.jpg");
+    }
+
+    @include m.responsive("mobile") {
+        background-image: url("./../../assets/destination/background-destination-mobile.jpg");
+    }
+}
+
+.destination__heading {
+    @include m.text-preset-2;
+    color: v.$color-white;
+    padding: v.$spacing-200 0px;
+}
+
+.destination__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: v.$spacing-200 0px;
+    width: 100%;
+
+    @include m.responsive("mobile") {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.destination__detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.destination__detail_title {
+    @include m.text-preset-7;
+    padding: v.$spacing-200 0px;
+}
+
+.destination__detail_value {
+    @include m.text-preset-6;
+    color: v.$color-white;
+    padding: v.$spacing-200 0px;
+}
+
+.destination__nav {
+    .active-destination {
+        border-bottom: solid 3px v.$color-white;
+        color: v.$color-white;
+    }
+
+    a {
+        @include m.nav-hover-effect(v.$spacing-200);
+        transition: all 0.3s ease;
+    }
+}
+
+.destination__para {
+    padding: v.$spacing-200 0px;
+}

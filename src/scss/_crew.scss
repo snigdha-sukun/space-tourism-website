@@ -1,0 +1,46 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.crew__background {
+    background-image: url("./../../assets/crew/background-crew-desktop.jpg");
+
+    @include m.responsive("tablet") {
+        background-image: url("./../../assets/crew/background-crew-tablet.jpg");
+    }
+
+    @include m.responsive("mobile") {
+        background-image: url("./../../assets/crew/background-crew-mobile.jpg");
+    }
+}
+
+.crew__designation {
+    @include m.text-preset-4;
+    color: v.$color-white;
+    opacity: 0.5;
+}
+
+.crew__name {
+    @include m.text-preset-3;
+    color: v.$color-white;
+    padding: v.$spacing-400 0px;
+}
+
+.dot {
+    justify-self: flex-end;
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin-right: v.$spacing-300;
+    background-color: v.$color-white-btn-hover;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+
+    &:hover {
+        background-color: v.$color-blue-300;
+    }
+}
+
+.active__crew {
+    background-color: v.$color-white;
+}

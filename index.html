@@ -6,25 +6,116 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./src/scss/index.css">
+  <script src="./src/js/index.js" defer></script>
 
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 
 <body>
+  <header>
+    <div>
+      <img src="./assets/shared/logo.svg" alt="logo">
+    </div>
+    <div class="mobile_menu" id="menu_hamburger" aria-label="Menu">
+      <img src="./assets/shared/icon-hamburger.svg" alt="menu" />
+    </div>
+    <nav id="nav_menu" class="main-nav" aria-label="Main Navigation">
+      <div class="close_menu" id="close_menu" aria-label="Close Menu">
+        <img src="./assets/shared/icon-close.svg" alt="close" />
+      </div>
+      <a id="link-home" data-tab="home" class="nav_link"><b>00</b> Home</a>
+      <a id="link-destination" data-tab="destination" class="nav_link"><b>01</b> Destination</a>
+      <a id="link-crew" data-tab="crew" class="nav_link"><b>02</b> Crew</a>
+      <a id="link-technology" data-tab="technology" class="nav_link"><b>03</b> Technology</a>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <div class="section__content">
+        <p class="home__l1">So, you want to travel to</p>
+        <h1 class="home__heading">Space</h1>
+        <p class="home__para">Let’s face it; if you want to go to space, you might as well genuinely go to
+          outer space and not hover kind of on the edge of it. Well sit back, and relax
+          because we’ll give you a truly out of this world experience!</p>
+      </div>
+      <div>
+        <button class="home__btn">Explore</button>
+      </div>
+    </section>
+    <section id="destination">
+      <div>
+        <h2 class="section__title"><span class="section__index">01</span> Pick your destination</h2>
+        <div class="destination__image_container">
+          <img id="destination__img" alt="destination">
+        </div>
+      </div>
+      <div class="section__content">
+        <nav class="destination__nav" aria-label="Destination Tabs">
+          <a data-index="0" class="link-destination">Moon</a>
+          <a data-index="1" class="link-destination">Mars</a>
+          <a data-index="2" class="link-destination">Europa</a>
+          <a data-index="3" class="link-destination">Titan</a>
+        </nav>
+        <p id="destination__name" class="destination__heading"></p>
+        <p id="destination__description" class="destination__para"></p>
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
-
-  So, you want to travel to
-  Space
-  Let’s face it; if you want to go to space, you might as well genuinely go to
-  outer space and not hover kind of on the edge of it. Well sit back, and relax
-  because we’ll give you a truly out of this world experience!
-
-  Explore
-
+        <hr>
+        <div class="destination__details">
+          <div class="destination__detail">
+            <p class="destination__detail_title">Avg. distance</p>
+            <p id="destination__distance" class="destination__detail_value"></p>
+          </div>
+          <div class="destination__detail">
+            <p class="destination__detail_title">Est. travel time</p>
+            <p id="destination__time" class="destination__detail_value"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="crew">
+      <div class="section__content">
+        <h2 class="section__title"><span class="section__index">02</span> Meet your crew</h2>
+        <div>
+          <p id="crew__designation" class="crew__designation"></p>
+          <p id="crew__name" class="crew__name"></p>
+          <p id="crew__details" class="crew__para"></p>
+        </div>
+        <div>
+          <span data-index="0" class="dot"></span>
+          <span data-index="1" class="dot"></span>
+          <span data-index="2" class="dot"></span>
+          <span data-index="3" class="dot"></span>
+        </div>
+      </div>
+      <div>
+        <img id="crew__img" alt="commander">
+      </div>
+    </section>
+    <section id="technology">
+      <div class="section__content">
+        <h2 class="section__title"><span class="section__index">03</span> Space launch 101</h2>
+        <div class="technology__img_mobile">
+          <img id="technology__img_mobile" alt="technology">
+        </div>
+        <div class="technology__content">
+          <div class="technology__nav">
+            <a data-index="0" class="technology__link">1</a>
+            <a data-index="1" class="technology__link">2</a>
+            <a data-index="2" class="technology__link">3</a>
+          </div>
+          <div>
+            <p class="crew__designation">The terminology...</p>
+            <p id="technology__name" class="crew__name"></p>
+            <p id="technology__description"></p>
+          </div>
+        </div>
+      </div>
+      <div class="technology__img_desktop">
+        <img id="technology__img_desktop" alt="technology">
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>

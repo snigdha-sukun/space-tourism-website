@@ -1,0 +1,30 @@
+@import 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap';
+
+// Spacing
+$spacing-25: 2px;
+$spacing-50: 4px;
+$spacing-100: 8px;
+$spacing-150: 12px;
+$spacing-200: 16px;
+$spacing-300: 24px;
+$spacing-400: 32px;
+$spacing-500: 40px;
+$spacing-600: 48px;
+$spacing-800: 64px;
+$spacing-1000: 80px;
+$spacing-1200: 96px;
+$spacing-1600: 128px;
+
+// Colors
+$color-blue-900: hsl(230, 35%, 7%);
+$color-blue-300: hsl(231, 77%, 90%);
+$color-white: hsl(0, 0%, 100%);
+$color-white-btn-hover: hsl(0, 0%, 59.2%);
+$color-white-shadow: hsl(0, 0%, 100%, 0.1);
+$color-white-nav: hsl(0, 0%, 100%, 0.05);
+$color-white-nav-hover: hsl(0, 0%, 100%, 0.5);
+
+// Fonts
+$font-family: 'Barlow', sans-serif;
+$font-family-condensed: 'Barlow Condensed', sans-serif;
+$font-family-bellefair: 'Bellefair', serif;

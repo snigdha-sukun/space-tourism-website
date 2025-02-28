@@ -1,0 +1,231 @@
+@use 'variables' as v;
+
+// Text Presets
+
+@mixin text-preset-1 {
+    font-family: v.$font-family-bellefair;
+    font-size: 144px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 171.9%;
+
+    @include responsive("tablet") {
+        text-align: center;
+    }
+
+    @include responsive("mobile") {
+        font-size: 80px;
+        line-height: 92px;
+        text-align: center;
+    }
+}
+
+@mixin text-preset-2 {
+    font-family: v.$font-family-bellefair;
+    font-size: 100px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 114.6%;
+
+    @include responsive("tablet") {
+        text-align: center;
+    }
+
+    @include responsive("mobile") {
+        font-size: 56px;
+        line-height: 64px;
+        text-align: center;
+    }
+}
+
+@mixin text-preset-3 {
+    font-family: v.$font-family-bellefair;
+    font-size: 56px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 64.2%;
+
+    @include responsive("tablet") {
+        text-align: center;
+    }
+
+    @include responsive("mobile") {
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+    }
+}
+
+@mixin text-preset-4 {
+    font-family: v.$font-family-bellefair;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36.7%;
+
+    @include responsive("tablet") {
+        text-align: center;
+    }
+
+    @include responsive("mobile") {
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+    }
+}
+
+@mixin text-preset-5 {
+    font-family: v.$font-family-condensed;
+    font-size: 28px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33.6%;
+
+    @include responsive("tablet") {
+        text-align: center;
+    }
+
+    @include responsive("mobile") {
+        font-size: 16px;
+        letter-spacing: 0.15em;
+        line-height: 19px;
+        text-align: center;
+    }
+}
+
+@mixin text-preset-6 {
+    font-family: v.$font-family-bellefair;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32.1%;
+
+    @include responsive("tablet") {
+        text-align: center;
+    }
+
+    @include responsive("mobile") {
+        font-size: 28px;
+        line-height: 32px;
+        text-align: center;
+    }
+}
+
+@mixin text-preset-7 {
+    font-family: v.$font-family-condensed;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.8%;
+
+    @include responsive("tablet") {
+        text-align: center;
+    }
+
+    @include responsive("mobile") {
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+    }
+}
+
+@mixin text-preset-8 {
+    font-family: v.$font-family-condensed;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.2%;
+}
+
+@mixin text-preset-9 {
+    font-family: v.$font-family;
+    font-size: 18px;
+    line-height: 180%;
+    font-weight: 400;
+    font-style: normal;
+
+    @include responsive("tablet") {
+        text-align: center;
+    }
+
+    @include responsive("mobile") {
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+@mixin responsive($breakpoint: desktop) {
+    @if $breakpoint ==mobile {
+        @media (max-width: 640px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==tablet {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else {
+        @content; // Default (Desktop)
+    }
+}
+
+@mixin nav-hover-effect($marginTop) {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+
+    &::after {
+        display: block;
+        content: '';
+        border-bottom: solid 3px v.$color-white-nav-hover;
+        transform: scaleX(0);
+        margin-top: $marginTop;
+        transition: transform 250ms ease-in-out;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+    }
+
+    @include responsive("mobile") {
+        &::after {
+            border-bottom: none;
+        }
+    }
+}
+
+@mixin mobile-nav {
+    @include responsive("mobile") {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: v.$spacing-200;
+        right: 0;
+        top: 0;
+        z-index: 10;
+        position: fixed;
+        width: 0%;
+        height: 100%;
+        transform: translateX(100%);
+        transition: all 0.5s ease-in-out;
+
+        &.active {
+            transform: translateX(0);
+            width: 50%;
+        }
+    }
+}

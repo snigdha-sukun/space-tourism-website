@@ -1,0 +1,105 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.technology__background {
+    background-image: url("./../../assets/technology/background-technology-desktop.jpg");
+
+    @include m.responsive("tablet") {
+        background-image: url("./../../assets/technology/background-technology-tablet.jpg");
+    }
+
+    @include m.responsive("mobile") {
+        background-image: url("./../../assets/technology/background-technology-mobile.jpg");
+    }
+}
+
+.technology__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include m.responsive("tablet") {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include m.responsive("mobile") {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.technology__nav {
+    @include m.text-preset-4;
+    margin-right: v.$spacing-800;
+    display: flex;
+    flex-direction: column;
+
+    @include m.responsive("tablet") {
+        margin: v.$spacing-500;
+        flex-direction: row;
+    }
+
+    @include m.responsive("mobile") {
+        margin: v.$spacing-400;
+        flex-direction: row;
+    }
+
+    a {
+        display: block;
+        cursor: pointer;
+        width: v.$spacing-1000;
+        height: v.$spacing-1000;
+        color: v.$color-white;
+        padding: v.$spacing-400;
+        border-radius: 50%;
+        border: 1px solid v.$color-white-nav-hover;
+        margin: v.$spacing-200 0px;
+        text-align: center;
+        transition: all 0.3s ease;
+
+        @include m.responsive("tablet") {
+            margin: 0px v.$spacing-200;
+        }
+
+        @include m.responsive("mobile") {
+            margin: 0px v.$spacing-200;
+        }
+
+        &:hover {
+            background-color: v.$color-blue-300;
+            color: v.$color-blue-900;
+        }
+    }
+
+    .active-technology {
+        background-color: v.$color-white;
+        color: v.$color-blue-900;
+    }
+}
+
+.technology__img_mobile {
+    display: none;
+
+    @include m.responsive("tablet") {
+        display: block;
+    }
+
+    @include m.responsive("mobile") {
+        display: block;
+    }
+}
+
+.technology__img_desktop {
+    display: block;
+
+    @include m.responsive("tablet") {
+        display: none;
+    }
+
+    @include m.responsive("mobile") {
+        display: none;
+    }
+}
